@@ -1,5 +1,8 @@
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
+import caseNeural from "@/assets/case-neural.jpg";
+import caseHeritage from "@/assets/case-heritage.jpg";
+import caseLumiere from "@/assets/case-lumiere.jpg";
 
 const cases = [
   {
