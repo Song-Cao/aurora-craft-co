@@ -3,6 +3,10 @@ import { ArrowRight, Brain, Clapperboard, Megaphone, Sparkles, MonitorPlay } fro
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
+import heroBg from "@/assets/hero-bg.jpg";
+import caseNeural from "@/assets/case-neural.jpg";
+import caseHeritage from "@/assets/case-heritage.jpg";
+import caseLumiere from "@/assets/case-lumiere.jpg";
 
 const services = [
   { icon: Brain, title: "AI Content & Creative Strategy", desc: "Intelligent content powered by data and imagination." },
@@ -13,18 +17,20 @@ const services = [
 ];
 
 const caseStudies = [
-  { title: "Neural Labs — AI Brand Launch", desc: "A complete brand identity and launch campaign for a pioneering AI research company.", outcome: "3x brand awareness in 90 days" },
-  { title: "Heritage Routes — Immersive Tourism", desc: "An interactive digital experience for a cultural tourism consortium across Europe.", outcome: "200k+ digital interactions" },
-  { title: "Lumière Beauty — Digital Storytelling", desc: "A multi-platform content strategy blending beauty and technology.", outcome: "150% increase in engagement" },
+  { title: "Neural Labs — AI Brand Launch", desc: "A complete brand identity and launch campaign for a pioneering AI research company.", outcome: "3x brand awareness in 90 days", image: caseNeural },
+  { title: "Heritage Routes — Immersive Tourism", desc: "An interactive digital experience for a cultural tourism consortium across Europe.", outcome: "200k+ digital interactions", image: caseHeritage },
+  { title: "Lumière Beauty — Digital Storytelling", desc: "A multi-platform content strategy blending beauty and technology.", outcome: "150% increase in engagement", image: caseLumiere },
 ];
 
 const Index = () => (
   <Layout>
     {/* Hero */}
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Glow orbs */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-primary/10 blur-[120px] animate-pulse-glow" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-secondary/10 blur-[120px] animate-pulse-glow" style={{ animationDelay: "2s" }} />
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
+      </div>
 
       <div className="container relative z-10">
         <AnimatedSection className="max-w-3xl">
@@ -80,8 +86,8 @@ const Index = () => (
           {caseStudies.map((c, i) => (
             <AnimatedSection key={c.title} delay={i * 0.1}>
               <div className="glass rounded-xl overflow-hidden group hover:glow-purple transition-shadow duration-500">
-                <div className="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                  <span className="text-3xl opacity-30">✦</span>
+              <div className="h-48 overflow-hidden">
+                  <img src={c.image} alt={c.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 </div>
                 <div className="p-6">
                   <h3 className="font-heading text-lg font-semibold mb-2 text-foreground">{c.title}</h3>

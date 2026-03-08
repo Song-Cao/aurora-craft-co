@@ -1,5 +1,8 @@
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
+import caseNeural from "@/assets/case-neural.jpg";
+import caseHeritage from "@/assets/case-heritage.jpg";
+import caseLumiere from "@/assets/case-lumiere.jpg";
 
 const cases = [
   {
@@ -7,6 +10,7 @@ const cases = [
     category: "AI Technology",
     desc: "We partnered with Neural Labs, a cutting-edge AI research company, to build their brand from the ground up. From visual identity to a multi-channel launch campaign, we positioned them as a leader in the AI space with a human-centered approach to communication.",
     outcomes: ["3x brand awareness in 90 days", "50+ media placements", "Award-winning visual identity"],
+    image: caseNeural,
     gradient: "from-primary/20 to-accent/20",
   },
   {
@@ -14,6 +18,7 @@ const cases = [
     category: "Cultural Tourism",
     desc: "Heritage Routes is a consortium of European cultural tourism organizations. We created an immersive digital platform and interactive media campaign that brought historical destinations to life through AR experiences, documentary content, and interactive storytelling.",
     outcomes: ["200k+ digital interactions", "35% increase in bookings", "Featured in Design Week"],
+    image: caseHeritage,
     gradient: "from-secondary/20 to-primary/20",
   },
   {
@@ -21,6 +26,7 @@ const cases = [
     category: "Beauty & FMCG",
     desc: "For Lumière Beauty, we developed a multi-platform content strategy that merged beauty culture with technology narratives. Through AI-generated visual art, influencer collaborations, and editorial storytelling, we redefined how the brand connects with a new generation.",
     outcomes: ["150% increase in engagement", "2M+ content views", "Expanded to 3 new markets"],
+    image: caseLumiere,
     gradient: "from-accent/20 to-secondary/20",
   },
 ];
@@ -43,8 +49,8 @@ const CaseStudies = () => (
           {cases.map((c, i) => (
             <AnimatedSection key={c.title} delay={i * 0.1}>
               <div className="glass rounded-2xl overflow-hidden">
-                <div className={`h-64 md:h-80 bg-gradient-to-br ${c.gradient} flex items-center justify-center`}>
-                  <span className="text-6xl opacity-20">✦</span>
+                <div className="h-64 md:h-80 overflow-hidden">
+                  <img src={c.image} alt={c.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
                 </div>
                 <div className="p-8 md:p-12">
                   <span className="text-xs font-medium text-primary tracking-widest uppercase">{c.category}</span>
