@@ -13,6 +13,10 @@ const About = () => (
   <Layout>
     {/* Hero */}
     <section className="py-24 md:py-32 relative overflow-hidden">
+      <div className="absolute inset-0">
+        <img src={aboutTeam} alt="" className="w-full h-full object-cover opacity-20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background" />
+      </div>
       <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/5 blur-[150px]" />
       <div className="container relative z-10">
         <AnimatedSection className="max-w-3xl">
