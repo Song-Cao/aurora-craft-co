@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
+import aboutTeam from "@/assets/about-team.jpg";
 
 const team = [
   { name: "Alex Mercer", role: "Founder & Creative Director" },
