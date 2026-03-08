@@ -49,8 +49,8 @@ const CaseStudies = () => (
           {cases.map((c, i) => (
             <AnimatedSection key={c.title} delay={i * 0.1}>
               <div className="glass rounded-2xl overflow-hidden">
-                <div className={`h-64 md:h-80 bg-gradient-to-br ${c.gradient} flex items-center justify-center`}>
-                  <span className="text-6xl opacity-20">✦</span>
+                <div className="h-64 md:h-80 overflow-hidden">
+                  <img src={c.image} alt={c.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
                 </div>
                 <div className="p-8 md:p-12">
                   <span className="text-xs font-medium text-primary tracking-widest uppercase">{c.category}</span>
