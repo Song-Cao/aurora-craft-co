@@ -18,6 +18,7 @@ const cases = [
     category: "Cultural Tourism",
     desc: "Heritage Routes is a consortium of European cultural tourism organizations. We created an immersive digital platform and interactive media campaign that brought historical destinations to life through AR experiences, documentary content, and interactive storytelling.",
     outcomes: ["200k+ digital interactions", "35% increase in bookings", "Featured in Design Week"],
+    image: caseHeritage,
     gradient: "from-secondary/20 to-primary/20",
   },
   {
