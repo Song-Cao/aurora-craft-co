@@ -10,6 +10,7 @@ const cases = [
     category: "AI Technology",
     desc: "We partnered with Neural Labs, a cutting-edge AI research company, to build their brand from the ground up. From visual identity to a multi-channel launch campaign, we positioned them as a leader in the AI space with a human-centered approach to communication.",
     outcomes: ["3x brand awareness in 90 days", "50+ media placements", "Award-winning visual identity"],
+    image: caseNeural,
     gradient: "from-primary/20 to-accent/20",
   },
   {
