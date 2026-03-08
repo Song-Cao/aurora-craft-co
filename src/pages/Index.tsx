@@ -86,8 +86,8 @@ const Index = () => (
           {caseStudies.map((c, i) => (
             <AnimatedSection key={c.title} delay={i * 0.1}>
               <div className="glass rounded-xl overflow-hidden group hover:glow-purple transition-shadow duration-500">
-                <div className="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                  <span className="text-3xl opacity-30">✦</span>
+              <div className="h-48 overflow-hidden">
+                  <img src={c.image} alt={c.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 </div>
                 <div className="p-6">
                   <h3 className="font-heading text-lg font-semibold mb-2 text-foreground">{c.title}</h3>
