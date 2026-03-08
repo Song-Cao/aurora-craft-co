@@ -3,6 +3,10 @@ import { ArrowRight, Brain, Clapperboard, Megaphone, Sparkles, MonitorPlay } fro
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
+import heroBg from "@/assets/hero-bg.jpg";
+import caseNeural from "@/assets/case-neural.jpg";
+import caseHeritage from "@/assets/case-heritage.jpg";
+import caseLumiere from "@/assets/case-lumiere.jpg";
 
 const services = [
   { icon: Brain, title: "AI Content & Creative Strategy", desc: "Intelligent content powered by data and imagination." },
