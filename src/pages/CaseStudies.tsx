@@ -26,6 +26,7 @@ const cases = [
     category: "Beauty & FMCG",
     desc: "For Lumière Beauty, we developed a multi-platform content strategy that merged beauty culture with technology narratives. Through AI-generated visual art, influencer collaborations, and editorial storytelling, we redefined how the brand connects with a new generation.",
     outcomes: ["150% increase in engagement", "2M+ content views", "Expanded to 3 new markets"],
+    image: caseLumiere,
     gradient: "from-accent/20 to-secondary/20",
   },
 ];
