@@ -17,9 +17,9 @@ const services = [
 ];
 
 const caseStudies = [
-  { title: "Neural Labs — AI Brand Launch", desc: "A complete brand identity and launch campaign for a pioneering AI research company.", outcome: "3x brand awareness in 90 days" },
-  { title: "Heritage Routes — Immersive Tourism", desc: "An interactive digital experience for a cultural tourism consortium across Europe.", outcome: "200k+ digital interactions" },
-  { title: "Lumière Beauty — Digital Storytelling", desc: "A multi-platform content strategy blending beauty and technology.", outcome: "150% increase in engagement" },
+  { title: "Neural Labs — AI Brand Launch", desc: "A complete brand identity and launch campaign for a pioneering AI research company.", outcome: "3x brand awareness in 90 days", image: caseNeural },
+  { title: "Heritage Routes — Immersive Tourism", desc: "An interactive digital experience for a cultural tourism consortium across Europe.", outcome: "200k+ digital interactions", image: caseHeritage },
+  { title: "Lumière Beauty — Digital Storytelling", desc: "A multi-platform content strategy blending beauty and technology.", outcome: "150% increase in engagement", image: caseLumiere },
 ];
 
 const Index = () => (
