@@ -3,13 +3,7 @@ import { Link } from "react-router-dom";
 const Footer = () => (
   <footer className="border-t border-border/50 bg-card/30">
     <div className="container py-12 md:py-16">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-        <div>
-          <h3 className="font-heading text-lg font-bold text-foreground mb-3">Two Virtual Media</h3>
-          <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-            A next-generation communication and media agency at the intersection of AI, creativity, and modern brand storytelling.
-          </p>
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         <div>
           <h4 className="text-sm font-semibold text-foreground mb-4">Navigation</h4>
           <ul className="space-y-2">
