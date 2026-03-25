@@ -27,11 +27,11 @@ const approaches = [
 ];
 
 const clients = [
-  { name: "BYD", industry: "Automotive" },
-  { name: "AliExpress", industry: "E-commerce & Tech" },
-  { name: "STAY Camden", industry: "Hospitality" },
-  { name: "Hutong", industry: "Food & Beverage" },
-  { name: "Fashion, Lifestyle & Luxury", industry: "Fashion, lifestyle, and luxury goods" },
+  { name: "BYD", industry: "Automotive", logo: logoByd },
+  { name: "AliExpress", industry: "E-commerce & Tech", logo: logoAliexpress },
+  { name: "STAY Camden", industry: "Hospitality", logo: logoStayCamden },
+  { name: "Hutong", industry: "Food & Beverage", logo: logoHutong },
+  { name: "Fashion, Lifestyle & Luxury", industry: "Fashion, lifestyle, and luxury goods", logo: logoFashion },
 ];
 
 const About = () => (
