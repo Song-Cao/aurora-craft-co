@@ -1,46 +1,39 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Brain, Clapperboard, Megaphone, Sparkles, MonitorPlay } from "lucide-react";
+import { ArrowRight, Globe, TrendingUp, Users, Award, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
 import heroBg from "@/assets/hero-bg.jpg";
-import caseNeural from "@/assets/case-neural.jpg";
-import caseHeritage from "@/assets/case-heritage.jpg";
-import caseLumiere from "@/assets/case-lumiere.jpg";
 
-const services = [
-  { icon: Brain, title: "AI Content & Creative Strategy", desc: "Intelligent content powered by data and imagination." },
-  { icon: Megaphone, title: "Digital Campaign Development", desc: "Campaigns that cut through noise with precision." },
-  { icon: Clapperboard, title: "Visual & Media Production", desc: "Cinematic storytelling for the digital age." },
-  { icon: Sparkles, title: "Brand Communication", desc: "Narratives that resonate and inspire action." },
-  { icon: MonitorPlay, title: "Interactive Media", desc: "Immersive experiences that captivate audiences." },
-];
-
-const caseStudies = [
-  { title: "Neural Labs — AI Brand Launch", desc: "A complete brand identity and launch campaign for a pioneering AI research company.", outcome: "3x brand awareness in 90 days", image: caseNeural },
-  { title: "Heritage Routes — Immersive Tourism", desc: "An interactive digital experience for a cultural tourism consortium across Europe.", outcome: "200k+ digital interactions", image: caseHeritage },
-  { title: "Lumière Beauty — Digital Storytelling", desc: "A multi-platform content strategy blending beauty and technology.", outcome: "150% increase in engagement", image: caseLumiere },
+const stats = [
+  { value: "10+", label: "Years across UK-China corridors" },
+  { value: "150+", label: "Campaigns on WeChat, Xiaohongshu, Instagram, TikTok" },
+  { value: "500+", label: "Influencers activated in both markets" },
+  { value: "98%", label: "Client Retention Rate" },
+  { value: "156%", label: "Average Client ROI" },
 ];
 
 const Index = () => (
   <Layout>
     {/* Hero */}
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Background image */}
       <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
+        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background" />
       </div>
 
       <div className="container relative z-10">
         <AnimatedSection className="max-w-3xl">
-          <p className="text-sm font-medium text-primary tracking-widest uppercase mb-6">Creative Communication & Media Agency</p>
+          <p className="text-sm font-medium text-primary tracking-widest uppercase mb-6">Two Virtual Media</p>
           <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.1] mb-6">
-            Where AI, Creativity and Media{" "}
-            <span className="gradient-text">Converge.</span>
+            Two Markets.{" "}
+            <span className="gradient-text">One Language.</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed">
-            Two Virtual Media is a next-generation communication and media agency dedicated to helping brands navigate the evolving landscape of AI-powered storytelling, immersive digital experiences, and modern brand communication.
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-4 leading-relaxed">
+            We work with British brands entering China, and Chinese brands establishing themselves in the UK.
+          </p>
+          <p className="text-base md:text-lg text-accent font-medium mb-10">
+            Cross-border marketing without the translation loss.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button asChild size="lg" className="rounded-full bg-primary hover:bg-primary/80 text-primary-foreground px-8 gap-2">
@@ -54,20 +47,42 @@ const Index = () => (
       </div>
     </section>
 
-    {/* Services */}
+    {/* The Bridge — Value Proposition */}
     <section className="py-24 md:py-32">
       <div className="container">
-        <AnimatedSection className="text-center mb-16">
-          <p className="text-sm font-medium text-primary tracking-widest uppercase mb-3">What We Do</p>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold">Our Capabilities</h2>
+        <AnimatedSection className="max-w-3xl mx-auto text-center">
+          <p className="text-sm font-medium text-primary tracking-widest uppercase mb-3">The Bridge</p>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-8">
+            We don't just move brands across borders.{" "}
+            <span className="gradient-text">We translate culture.</span>
+          </h2>
         </AnimatedSection>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((s, i) => (
-            <AnimatedSection key={s.title} delay={i * 0.1}>
-              <div className="glass rounded-xl p-8 h-full hover:glow-blue transition-shadow duration-500 group">
-                <s.icon className="w-8 h-8 text-primary mb-5 group-hover:scale-110 transition-transform" />
-                <h3 className="font-heading text-lg font-semibold mb-2 text-foreground">{s.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+        <AnimatedSection delay={0.1} className="max-w-3xl mx-auto">
+          <div className="glass rounded-xl p-8 md:p-12 space-y-5 text-muted-foreground leading-relaxed text-base md:text-lg">
+            <p>
+              Too often, brands treat international expansion as a logistical exercise. A website here, a social account there. But entering China—or the UK—demands something more nuanced: fluency in behaviour, humour, context, and trust.
+            </p>
+            <p>
+              Based in London, Two Virtual Media exists to bridge that gap. We work with British brands navigating China's distinct digital ecosystem, and Chinese brands building recognition and credibility in the UK. Two directions, one team, and a shared belief that great marketing should never feel foreign.
+            </p>
+          </div>
+        </AnimatedSection>
+      </div>
+    </section>
+
+    {/* By the Numbers */}
+    <section className="py-24 md:py-32 bg-card/30">
+      <div className="container">
+        <AnimatedSection className="text-center mb-16">
+          <p className="text-sm font-medium text-primary tracking-widest uppercase mb-3">By the Numbers</p>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold">Proven Results</h2>
+        </AnimatedSection>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+          {stats.map((s, i) => (
+            <AnimatedSection key={s.label} delay={i * 0.08}>
+              <div className="glass rounded-xl p-6 text-center hover:glow-blue transition-shadow duration-500">
+                <p className="font-heading text-3xl md:text-4xl font-bold gradient-text mb-2">{s.value}</p>
+                <p className="text-xs md:text-sm text-muted-foreground leading-snug">{s.label}</p>
               </div>
             </AnimatedSection>
           ))}
@@ -75,34 +90,41 @@ const Index = () => (
       </div>
     </section>
 
-    {/* Case Studies Preview */}
-    <section className="py-24 md:py-32 bg-card/30">
+    {/* What We Do — Two Columns */}
+    <section className="py-24 md:py-32">
       <div className="container">
         <AnimatedSection className="text-center mb-16">
-          <p className="text-sm font-medium text-primary tracking-widest uppercase mb-3">Selected Work</p>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold">Case Studies</h2>
+          <p className="text-sm font-medium text-primary tracking-widest uppercase mb-3">What We Do</p>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold">Two Directions, One Team</h2>
         </AnimatedSection>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {caseStudies.map((c, i) => (
-            <AnimatedSection key={c.title} delay={i * 0.1}>
-              <div className="glass rounded-xl overflow-hidden group hover:glow-purple transition-shadow duration-500">
-              <div className="h-48 overflow-hidden">
-                  <img src={c.image} alt={c.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <AnimatedSection delay={0.1}>
+            <div className="glass rounded-xl p-8 md:p-10 h-full hover:glow-blue transition-shadow duration-500 group">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Globe className="w-6 h-6 text-primary" />
                 </div>
-                <div className="p-6">
-                  <h3 className="font-heading text-lg font-semibold mb-2 text-foreground">{c.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{c.desc}</p>
-                  <span className="text-xs font-medium text-accent">{c.outcome}</span>
-                </div>
+                <h3 className="font-heading text-xl font-semibold text-foreground">For UK Brands Entering China</h3>
               </div>
-            </AnimatedSection>
-          ))}
+              <p className="text-muted-foreground leading-relaxed">
+                We help you build presence across WeChat, Xiaohongshu, Douyin, and beyond. From strategy to content to KOL partnerships, we ensure your brand connects with Chinese consumers—without losing your identity.
+              </p>
+            </div>
+          </AnimatedSection>
+          <AnimatedSection delay={0.2}>
+            <div className="glass rounded-xl p-8 md:p-10 h-full hover:glow-purple transition-shadow duration-500 group">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
+                  <TrendingUp className="w-6 h-6 text-secondary" />
+                </div>
+                <h3 className="font-heading text-xl font-semibold text-foreground">For Chinese Brands Entering the UK</h3>
+              </div>
+              <p className="text-muted-foreground leading-relaxed">
+                We help you tell your story for a British audience. Through Western social platforms, PR, influencer campaigns, and brand positioning, we build the credibility and visibility you need to grow.
+              </p>
+            </div>
+          </AnimatedSection>
         </div>
-        <AnimatedSection className="text-center mt-12">
-          <Button asChild variant="outline" className="rounded-full border-border/50 hover:bg-muted px-8 gap-2">
-            <Link to="/case-studies">View All Projects <ArrowRight size={16} /></Link>
-          </Button>
-        </AnimatedSection>
       </div>
     </section>
 
@@ -116,7 +138,7 @@ const Index = () => (
             <span className="gradient-text">extraordinary.</span>
           </h2>
           <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
-            Ready to transform your brand's story with AI-driven creativity?
+            Ready to bridge the gap between UK and China?
           </p>
           <Button asChild size="lg" className="rounded-full bg-primary hover:bg-primary/80 text-primary-foreground px-10 gap-2">
             <Link to="/contact">Get in Touch <ArrowRight size={16} /></Link>
