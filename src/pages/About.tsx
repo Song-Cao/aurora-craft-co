@@ -2,6 +2,11 @@ import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Target, Languages, BarChart3 } from "lucide-react";
 import aboutTeam from "@/assets/about-team.jpg";
+import logoByd from "@/assets/logo-byd.png";
+import logoAliexpress from "@/assets/logo-aliexpress.png";
+import logoStayCamden from "@/assets/logo-stay-camden.png";
+import logoHutong from "@/assets/logo-hutong.png";
+import logoFashion from "@/assets/logo-fashion-luxury.png";
 
 const approaches = [
   {
@@ -22,11 +27,11 @@ const approaches = [
 ];
 
 const clients = [
-  { name: "BYD", industry: "Automotive" },
-  { name: "AliExpress", industry: "E-commerce & Tech" },
-  { name: "STAY Camden", industry: "Hospitality" },
-  { name: "Hutong", industry: "Food & Beverage" },
-  { name: "Fashion, Lifestyle & Luxury", industry: "Fashion, lifestyle, and luxury goods" },
+  { name: "BYD", industry: "Automotive", logo: logoByd },
+  { name: "AliExpress", industry: "E-commerce & Tech", logo: logoAliexpress },
+  { name: "STAY Camden", industry: "Hospitality", logo: logoStayCamden },
+  { name: "Hutong", industry: "Food & Beverage", logo: logoHutong },
+  { name: "Fashion, Lifestyle & Luxury", industry: "Fashion, lifestyle, and luxury goods", logo: logoFashion },
 ];
 
 const About = () => (
@@ -103,7 +108,7 @@ const About = () => (
           {clients.map((c, i) => (
             <AnimatedSection key={c.name} delay={i * 0.08}>
               <div className="glass rounded-xl p-6 text-center hover:glow-blue transition-shadow duration-500 h-full flex flex-col items-center justify-center min-h-[140px]">
-                <p className="font-heading text-xl md:text-2xl font-bold text-foreground mb-2">{c.name}</p>
+                <img src={c.logo} alt={c.name} loading="lazy" className="h-16 w-auto object-contain mb-3" />
                 <p className="text-xs md:text-sm text-muted-foreground">{c.industry}</p>
               </div>
             </AnimatedSection>
