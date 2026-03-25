@@ -108,7 +108,7 @@ const About = () => (
           {clients.map((c, i) => (
             <AnimatedSection key={c.name} delay={i * 0.08}>
               <div className="glass rounded-xl p-6 text-center hover:glow-blue transition-shadow duration-500 h-full flex flex-col items-center justify-center min-h-[140px]">
-                <p className="font-heading text-xl md:text-2xl font-bold text-foreground mb-2">{c.name}</p>
+                <img src={c.logo} alt={c.name} loading="lazy" className="h-16 w-auto object-contain mb-3" />
                 <p className="text-xs md:text-sm text-muted-foreground">{c.industry}</p>
               </div>
             </AnimatedSection>
