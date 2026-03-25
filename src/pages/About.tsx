@@ -2,6 +2,11 @@ import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Target, Languages, BarChart3 } from "lucide-react";
 import aboutTeam from "@/assets/about-team.jpg";
+import logoByd from "@/assets/logo-byd.png";
+import logoAliexpress from "@/assets/logo-aliexpress.png";
+import logoStayCamden from "@/assets/logo-stay-camden.png";
+import logoHutong from "@/assets/logo-hutong.png";
+import logoFashion from "@/assets/logo-fashion-luxury.png";
 
 const approaches = [
   {
