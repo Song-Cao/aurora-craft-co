@@ -1,72 +1,72 @@
+import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
-import caseNeural from "@/assets/case-neural.jpg";
-import caseHeritage from "@/assets/case-heritage.jpg";
-import caseLumiere from "@/assets/case-lumiere.jpg";
+import industryAutomotive from "@/assets/industry-automotive.jpg";
+import industryHospitality from "@/assets/industry-hospitality.jpg";
+import industryFood from "@/assets/industry-food.jpg";
+import industryEcommerce from "@/assets/industry-ecommerce.jpg";
+import industryFashion from "@/assets/industry-fashion.jpg";
+import industryTechnology from "@/assets/industry-technology.jpg";
+import industryEducation from "@/assets/industry-education.jpg";
+import industryRealestate from "@/assets/industry-realestate.jpg";
 
-const cases = [
-  {
-    title: "Neural Labs — AI Brand Launch",
-    category: "AI Technology",
-    desc: "We partnered with Neural Labs, a cutting-edge AI research company, to build their brand from the ground up. From visual identity to a multi-channel launch campaign, we positioned them as a leader in the AI space with a human-centered approach to communication.",
-    outcomes: ["3x brand awareness in 90 days", "50+ media placements", "Award-winning visual identity"],
-    image: caseNeural,
-    gradient: "from-primary/20 to-accent/20",
-  },
-  {
-    title: "Heritage Routes — Immersive Cultural Tourism",
-    category: "Cultural Tourism",
-    desc: "Heritage Routes is a consortium of European cultural tourism organizations. We created an immersive digital platform and interactive media campaign that brought historical destinations to life through AR experiences, documentary content, and interactive storytelling.",
-    outcomes: ["200k+ digital interactions", "35% increase in bookings", "Featured in Design Week"],
-    image: caseHeritage,
-    gradient: "from-secondary/20 to-primary/20",
-  },
-  {
-    title: "Lumière Beauty — Digital Storytelling",
-    category: "Beauty & FMCG",
-    desc: "For Lumière Beauty, we developed a multi-platform content strategy that merged beauty culture with technology narratives. Through AI-generated visual art, influencer collaborations, and editorial storytelling, we redefined how the brand connects with a new generation.",
-    outcomes: ["150% increase in engagement", "2M+ content views", "Expanded to 3 new markets"],
-    image: caseLumiere,
-    gradient: "from-accent/20 to-secondary/20",
-  },
+const industries = [
+  { name: "Automotive", image: industryAutomotive, slug: "automotive" },
+  { name: "Hospitality", image: industryHospitality, slug: "hospitality" },
+  { name: "Food & Beverage", image: industryFood, slug: "food-beverage" },
+  { name: "E‑commerce", image: industryEcommerce, slug: "ecommerce" },
+  { name: "Fashion", image: industryFashion, slug: null },
+  { name: "Technology", image: industryTechnology, slug: null },
+  { name: "Education", image: industryEducation, slug: null },
+  { name: "Real Estate", image: industryRealestate, slug: null },
 ];
 
 const CaseStudies = () => (
   <Layout>
     <section className="py-24 md:py-32">
       <div className="container">
-        <AnimatedSection className="max-w-2xl mb-20">
+        <AnimatedSection className="max-w-2xl mb-16">
           <p className="text-sm font-medium text-primary tracking-widest uppercase mb-4">Case Studies</p>
           <h1 className="font-heading text-4xl md:text-6xl font-bold leading-[1.1] mb-6">
-            Work that <span className="gradient-text">speaks.</span>
+            Industries We <span className="gradient-text">Serve</span>
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            A selection of projects where creativity, technology, and strategy came together to deliver measurable impact.
+            Cross-border marketing expertise across diverse sectors.
           </p>
         </AnimatedSection>
 
-        <div className="space-y-16">
-          {cases.map((c, i) => (
-            <AnimatedSection key={c.title} delay={i * 0.1}>
-              <div className="glass rounded-2xl overflow-hidden">
-                <div className="h-64 md:h-80 overflow-hidden">
-                  <img src={c.image} alt={c.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-                </div>
-                <div className="p-8 md:p-12">
-                  <span className="text-xs font-medium text-primary tracking-widest uppercase">{c.category}</span>
-                  <h2 className="font-heading text-2xl md:text-3xl font-bold mt-2 mb-4 text-foreground">{c.title}</h2>
-                  <p className="text-muted-foreground leading-relaxed mb-8 max-w-2xl">{c.desc}</p>
-                  <div className="flex flex-wrap gap-3">
-                    {c.outcomes.map((o) => (
-                      <span key={o} className="text-xs font-medium px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20">
-                        {o}
-                      </span>
-                    ))}
-                  </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {industries.map((ind, i) => {
+            const card = (
+              <div className="group relative rounded-xl overflow-hidden aspect-[3/4] cursor-pointer">
+                <img
+                  src={ind.image}
+                  alt={ind.name}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 className="font-heading text-lg md:text-xl font-bold text-foreground">{ind.name}</h3>
+                  {ind.slug && (
+                    <p className="text-xs text-primary mt-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                      View case study →
+                    </p>
+                  )}
                 </div>
               </div>
-            </AnimatedSection>
-          ))}
+            );
+
+            return (
+              <AnimatedSection key={ind.name} delay={i * 0.08}>
+                {ind.slug ? (
+                  <Link to={`/case-studies/${ind.slug}`}>{card}</Link>
+                ) : (
+                  card
+                )}
+              </AnimatedSection>
+            );
+          })}
         </div>
       </div>
     </section>
