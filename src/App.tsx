@@ -12,6 +12,7 @@ import CaseHospitality from "./pages/CaseHospitality";
 import CaseFood from "./pages/CaseFood";
 import CaseEcommerce from "./pages/CaseEcommerce";
 import Contact from "./pages/Contact";
+import Insights from "./pages/Insights";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/case-studies/hospitality" element={<CaseHospitality />} />
           <Route path="/case-studies/food-beverage" element={<CaseFood />} />
           <Route path="/case-studies/ecommerce" element={<CaseEcommerce />} />
+          <Route path="/insights" element={<Insights />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
