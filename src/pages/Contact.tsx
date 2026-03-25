@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
 import { toast } from "sonner";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
@@ -28,14 +29,32 @@ const Contact = () => {
             <AnimatedSection>
               <p className="text-sm font-medium text-primary tracking-widest uppercase mb-4">Contact</p>
               <h1 className="font-heading text-4xl md:text-5xl font-bold leading-[1.1] mb-6">
-                Let's build something <span className="gradient-text">together.</span>
+                Let's <span className="gradient-text">Talk.</span>
               </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                We are always open to new collaborations with visionary brands and organizations. If you are interested in exploring creative projects with us, feel free to reach out.
+              <p className="text-lg text-muted-foreground leading-relaxed mb-10">
+                Whether you're a British brand exploring China or a Chinese brand preparing for the UK, we'd like to understand your goals.
               </p>
-              <div className="space-y-4 text-muted-foreground">
-                <p className="text-sm"><span className="text-foreground font-medium">Email:</span> hello@twovirtualmedia.com</p>
-                <p className="text-sm"><span className="text-foreground font-medium">Based in:</span> Amsterdam & London</p>
+              <p className="text-muted-foreground leading-relaxed mb-10">
+                We offer an initial consultation to discuss your market, your challenges, and how we can help — with no obligation.
+              </p>
+
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <MapPin className="w-5 h-5 text-primary mt-1 shrink-0" />
+                  <div>
+                    <p className="text-sm font-medium text-foreground mb-1">London</p>
+                    <p className="text-sm text-muted-foreground">[Address]</p>
+                    <p className="text-sm text-muted-foreground">United Kingdom</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <Mail className="w-5 h-5 text-primary shrink-0" />
+                  <p className="text-sm text-muted-foreground">hello@twovirtualmedia.com</p>
+                </div>
+                <div className="flex items-center gap-4">
+                  <Phone className="w-5 h-5 text-primary shrink-0" />
+                  <p className="text-sm text-muted-foreground">+44 (0)20 1234 5678</p>
+                </div>
               </div>
             </AnimatedSection>
 
