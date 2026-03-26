@@ -25,14 +25,14 @@ const Index = () => (
     </section>
 
     {/* Hero Text */}
-    <section className="relative -mt-40 md:-mt-52 z-10 pb-12 md:pb-16">
+    <section className="relative -mt-20 md:-mt-28 z-10 pb-12 md:pb-16">
       <div className="container">
         <AnimatedSection className="max-w-2xl mx-auto text-center">
-          <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold leading-[1.2] mb-4">
+          <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold leading-[1.2] mb-4 text-white drop-shadow-lg">
             Two Markets.{" "}
-            <span className="gradient-text">One Language.</span>
+            <span className="text-secondary drop-shadow-lg">One Language.</span>
           </h1>
-          <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto mb-3 leading-relaxed">
+          <p className="text-sm md:text-base text-white/90 max-w-xl mx-auto mb-3 leading-relaxed drop-shadow-md">
             We work with British brands entering China, and Chinese brands establishing themselves in the UK.
           </p>
           <p className="text-xs md:text-sm text-accent font-medium mb-8">
