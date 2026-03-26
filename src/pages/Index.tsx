@@ -57,7 +57,7 @@ const Index = () => (
         <AnimatedSection className="max-w-3xl mx-auto text-center">
           <p className="text-sm font-medium text-primary tracking-widest uppercase mb-3">The Bridge</p>
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-8">
-            We don't just move brands across borders.<br />
+            We don't just move brands across borders.{" "}
             <span className="gradient-text">We translate culture.</span>
           </h2>
         </AnimatedSection>
