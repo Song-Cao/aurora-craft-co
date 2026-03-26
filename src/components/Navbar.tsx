@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.png";
 
 const links = [
   { to: "/", label: "Home" },
@@ -19,8 +20,9 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass">
       <div className="container flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="font-heading text-lg md:text-xl font-bold tracking-tight text-foreground">
-          Two Virtual Media
+        <Link to="/" className="flex items-center gap-2">
+          <img src={logo} alt="Two Virtual Media" width={40} height={40} className="h-10 w-10" />
+          <span className="font-heading text-lg md:text-xl font-bold tracking-tight text-foreground">Two Virtual Media</span>
         </Link>
 
         {/* Desktop */}
