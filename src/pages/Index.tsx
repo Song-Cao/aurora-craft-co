@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
 import heroBg from "@/assets/hero-bg.png";
+import bridgeBg from "@/assets/bridge-bg.png";
 
 const stats = [
   { value: "10+", label: "Years across UK-China corridors" },
@@ -53,6 +54,11 @@ const Index = () => (
     {/* The Bridge — Value Proposition */}
     <section className="py-24 md:py-32">
       <div className="container">
+        <AnimatedSection className="mb-12">
+          <div className="rounded-2xl overflow-hidden">
+            <img src={bridgeBg} alt="UK-China bridge" className="w-full h-[300px] md:h-[400px] object-cover" />
+          </div>
+        </AnimatedSection>
         <AnimatedSection className="max-w-3xl mx-auto text-center">
           <p className="text-sm font-medium text-primary tracking-widest uppercase mb-3">The Bridge</p>
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-8">
