@@ -27,22 +27,22 @@ const Index = () => (
     {/* Hero Text */}
     <section className="relative -mt-20 md:-mt-28 z-10 pb-12 md:pb-16">
       <div className="container">
-        <AnimatedSection className="max-w-2xl mx-auto text-center">
-          <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold leading-[1.2] mb-4 text-white drop-shadow-lg">
+        <AnimatedSection className="max-w-2xl mx-auto text-center bg-background/80 backdrop-blur-md rounded-2xl p-8 md:p-12 shadow-xl">
+          <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold leading-[1.2] mb-4 text-foreground">
             Two Markets.{" "}
-            <span className="text-secondary drop-shadow-lg">One Language.</span>
+            <span className="gradient-text">One Language.</span>
           </h1>
-          <p className="text-sm md:text-base text-white/90 max-w-xl mx-auto mb-3 leading-relaxed drop-shadow-md">
+          <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto mb-3 leading-relaxed">
             We work with British brands entering China, and Chinese brands establishing themselves in the UK.
           </p>
-          <p className="text-xs md:text-sm text-white/80 font-medium mb-8 drop-shadow-md">
+          <p className="text-xs md:text-sm text-accent font-medium mb-8">
             Cross-border marketing without the translation loss.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            <Button asChild size="default" className="rounded-full bg-white/90 hover:bg-white text-foreground px-6 gap-2 text-sm shadow-lg">
+            <Button asChild size="default" className="rounded-full bg-primary hover:bg-primary/80 text-primary-foreground px-6 gap-2 text-sm">
               <Link to="/contact">Start a Project <ArrowRight size={14} /></Link>
             </Button>
-            <Button asChild size="default" variant="outline" className="rounded-full border-white/60 text-white hover:bg-white/20 px-6 text-sm">
+            <Button asChild size="default" variant="outline" className="rounded-full border-border/50 hover:bg-muted px-6 text-sm">
               <Link to="/services">Explore Services</Link>
             </Button>
           </div>
