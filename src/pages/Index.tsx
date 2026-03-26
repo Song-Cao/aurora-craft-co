@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
 import heroBg from "@/assets/hero-bg.png";
+import statsBg from "@/assets/stats-bg.png";
 
 const stats = [
   { value: "10+", label: "Years across UK-China corridors" },
