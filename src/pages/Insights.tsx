@@ -265,30 +265,33 @@ const InsightCard = ({ insight }: { insight: (typeof insights)[0] }) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <article className="card-bold rounded-sm p-8 md:p-10">
+    <article className="glass rounded-xl p-8 md:p-10 transition-all duration-300">
       <h2 className="font-heading text-xl md:text-2xl font-bold text-foreground leading-tight mb-4">
         {insight.title}
       </h2>
       <p className="text-muted-foreground leading-relaxed mb-6">{insight.summary}</p>
 
       {expanded && (
-        <div className="prose prose-invert max-w-none mb-6 text-muted-foreground leading-relaxed whitespace-pre-line border-l-2 border-primary/30 pl-6">
+        <div className="prose prose-invert max-w-none mb-6 text-muted-foreground leading-relaxed whitespace-pre-line">
           {insight.content.split("\n\n").map((paragraph, i) => {
             if (paragraph.startsWith("**") && paragraph.endsWith("**")) {
               return (
-                <h3 key={i} className="font-heading text-lg font-bold text-foreground mt-8 mb-3">
+                <h3 key={i} className="font-heading text-lg font-semibold text-foreground mt-8 mb-3">
                   {paragraph.replace(/\*\*/g, "")}
                 </h3>
               );
             }
+            // Handle paragraphs with bold segments
+            const parts = paragraph.split(/(\*\*[^*]+\*\*)/g);
             const hasBoldStart = paragraph.startsWith("**");
             if (hasBoldStart && paragraph.indexOf("**", 2) < paragraph.length - 2) {
+              // It's a heading followed by content
               const headingEnd = paragraph.indexOf("**", 2) + 2;
               const heading = paragraph.slice(2, headingEnd - 2);
               const rest = paragraph.slice(headingEnd).trim();
               return (
                 <div key={i}>
-                  <h3 className="font-heading text-lg font-bold text-foreground mt-8 mb-3">
+                  <h3 className="font-heading text-lg font-semibold text-foreground mt-8 mb-3">
                     {heading}
                   </h3>
                   {rest && <p className="mb-4">{renderMarkdown(rest)}</p>}
@@ -316,7 +319,7 @@ const InsightCard = ({ insight }: { insight: (typeof insights)[0] }) => {
 
       <button
         onClick={() => setExpanded(!expanded)}
-        className="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:text-primary/80 transition-colors uppercase tracking-wider"
+        className="inline-flex items-center gap-2 text-primary font-medium text-sm hover:text-primary/80 transition-colors"
       >
         {expanded ? "Show less" : "Read more"}
         <ChevronDown
@@ -329,6 +332,7 @@ const InsightCard = ({ insight }: { insight: (typeof insights)[0] }) => {
 };
 
 function renderMarkdown(text: string) {
+  // Split by bold (**) and italic (*) markers
   const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g);
   return parts.map((part, i) => {
     if (part.startsWith("**") && part.endsWith("**")) {
@@ -348,14 +352,16 @@ function renderMarkdown(text: string) {
 const Insights = () => {
   return (
     <Layout>
-      <section className="py-28 md:py-36 relative overflow-hidden">
+      <section className="py-24 md:py-32 relative overflow-hidden">
+        <div className="absolute top-1/4 left-0 w-[500px] h-[500px] rounded-full bg-primary/5 blur-[150px]" />
+        <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] rounded-full bg-accent/5 blur-[150px]" />
+
         <div className="container relative z-10">
           <AnimatedSection>
-            <div className="accent-bar mb-6 mx-auto" />
-            <p className="text-xs font-semibold text-primary tracking-[0.25em] uppercase mb-3 text-center">
+            <p className="text-sm font-medium text-primary tracking-widest uppercase mb-4 text-center">
               Insights
             </p>
-            <h1 className="font-heading text-4xl md:text-6xl font-extrabold leading-[1.0] tracking-tight mb-6 text-center">
+            <h1 className="font-heading text-4xl md:text-6xl font-bold leading-[1.1] mb-6 text-center">
               Industry <span className="gradient-text">Insights</span>
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto text-center mb-16">
@@ -363,7 +369,7 @@ const Insights = () => {
             </p>
           </AnimatedSection>
 
-          <div className="space-y-6 max-w-4xl mx-auto">
+          <div className="space-y-8 max-w-4xl mx-auto">
             {insights.map((insight, index) => (
               <AnimatedSection key={insight.id} delay={index * 0.1}>
                 <InsightCard insight={insight} />
