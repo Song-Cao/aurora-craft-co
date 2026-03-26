@@ -23,11 +23,12 @@ const industries = [
 
 const CaseStudies = () => (
   <Layout>
-    <section className="py-24 md:py-32">
+    <section className="py-28 md:py-36">
       <div className="container">
         <AnimatedSection className="max-w-2xl mb-16">
-          <p className="text-sm font-medium text-primary tracking-widest uppercase mb-4">Case Studies</p>
-          <h1 className="font-heading text-4xl md:text-6xl font-bold leading-[1.1] mb-6">
+          <div className="accent-bar mb-6" />
+          <p className="text-xs font-semibold text-primary tracking-[0.25em] uppercase mb-3">Case Studies</p>
+          <h1 className="font-heading text-4xl md:text-6xl font-extrabold leading-[1.0] tracking-tight mb-6">
             Industries We <span className="gradient-text">Serve</span>
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
@@ -35,21 +36,21 @@ const CaseStudies = () => (
           </p>
         </AnimatedSection>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {industries.map((ind, i) => {
             const card = (
-              <div className="group relative rounded-xl overflow-hidden aspect-[3/4] cursor-pointer">
+              <div className="group relative overflow-hidden aspect-[3/4] cursor-pointer rounded-sm">
                 <img
                   src={ind.image}
                   alt={ind.name}
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="font-heading text-lg md:text-xl font-bold text-foreground">{ind.name}</h3>
+                  <h3 className="font-heading text-lg md:text-xl font-extrabold text-foreground">{ind.name}</h3>
                   {ind.slug && (
-                    <p className="text-xs text-primary mt-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <p className="text-xs text-primary font-semibold mt-1 opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-wider">
                       View case study →
                     </p>
                   )}

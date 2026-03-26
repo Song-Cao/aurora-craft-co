@@ -17,27 +17,29 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/40">
       <div className="container flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="font-heading text-lg md:text-xl font-bold tracking-tight text-foreground">
+        <Link to="/" className="font-heading text-lg md:text-xl font-extrabold tracking-tight text-foreground uppercase">
           Two Virtual Media
         </Link>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-10">
           {links.map((l) => (
             <Link
               key={l.to}
               to={l.to}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-primary",
-                location.pathname === l.to ? "text-primary" : "text-muted-foreground"
+                "text-sm font-medium transition-colors hover:text-primary relative",
+                location.pathname === l.to
+                  ? "text-foreground after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-[2px] after:bg-primary"
+                  : "text-muted-foreground"
               )}
             >
               {l.label}
             </Link>
           ))}
-          <Button asChild size="sm" className="bg-primary hover:bg-primary/80 text-primary-foreground rounded-full px-6">
+          <Button asChild size="sm" className="bg-primary hover:bg-primary/80 text-primary-foreground rounded-none px-6 font-semibold">
             <Link to="/contact">Get in Touch</Link>
           </Button>
         </div>
@@ -50,7 +52,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden glass border-t border-border/50 pb-6 px-6 space-y-4">
+        <div className="md:hidden bg-card border-t border-border/40 pb-6 px-6 space-y-4">
           {links.map((l) => (
             <Link
               key={l.to}
@@ -64,7 +66,7 @@ const Navbar = () => {
               {l.label}
             </Link>
           ))}
-          <Button asChild size="sm" className="w-full bg-primary hover:bg-primary/80 text-primary-foreground rounded-full">
+          <Button asChild size="sm" className="w-full bg-primary hover:bg-primary/80 text-primary-foreground rounded-none font-semibold">
             <Link to="/contact" onClick={() => setOpen(false)}>Get in Touch</Link>
           </Button>
         </div>
