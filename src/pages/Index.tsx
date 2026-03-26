@@ -24,7 +24,7 @@ const Index = () => (
 
       <div className="container relative z-10">
         <AnimatedSection className="max-w-3xl">
-          <p className="text-sm font-medium text-primary tracking-widest uppercase mb-6">Two Virtual Media</p>
+          
           <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.1] mb-6">
             Two Markets.{" "}
             <span className="gradient-text">One Language.</span>
