@@ -77,7 +77,7 @@ const Index = () => (
     {/* By the Numbers */}
     <section className="py-24 md:py-32 bg-card/30 relative overflow-hidden">
       <img src={statsBg} alt="" className="absolute inset-0 w-full h-full object-cover opacity-30" />
-      <div className="container">
+      <div className="container relative z-10">
         <AnimatedSection className="text-center mb-16">
           <p className="text-sm font-medium text-primary tracking-widest uppercase mb-3">By the Numbers</p>
           <h2 className="font-heading text-3xl md:text-4xl font-bold">Proven Results</h2>
