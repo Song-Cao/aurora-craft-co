@@ -3,7 +3,7 @@ import { ArrowRight, Globe, TrendingUp, Users, Award, BarChart3 } from "lucide-r
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/hero-bg.png";
 
 const stats = [
   { value: "10+", label: "Years across UK-China corridors" },
@@ -16,30 +16,33 @@ const stats = [
 const Index = () => (
   <Layout>
     {/* Hero */}
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-30" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background" />
+    {/* Hero Image */}
+    <section className="relative overflow-hidden">
+      <div className="w-full">
+        <img src={heroBg} alt="Two Virtual Media" className="w-full h-[60vh] md:h-[75vh] object-cover" />
       </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+    </section>
 
-      <div className="container relative z-10">
-        <AnimatedSection className="max-w-3xl">
-          
-          <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.1] mb-6">
+    {/* Hero Text */}
+    <section className="py-12 md:py-16">
+      <div className="container">
+        <AnimatedSection className="max-w-2xl mx-auto text-center">
+          <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold leading-[1.2] mb-4">
             Two Markets.{" "}
             <span className="gradient-text">One Language.</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-4 leading-relaxed">
+          <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto mb-3 leading-relaxed">
             We work with British brands entering China, and Chinese brands establishing themselves in the UK.
           </p>
-          <p className="text-base md:text-lg text-accent font-medium mb-10">
+          <p className="text-xs md:text-sm text-accent font-medium mb-8">
             Cross-border marketing without the translation loss.
           </p>
-          <div className="flex flex-wrap gap-4">
-            <Button asChild size="lg" className="rounded-full bg-primary hover:bg-primary/80 text-primary-foreground px-8 gap-2">
-              <Link to="/contact">Start a Project <ArrowRight size={16} /></Link>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Button asChild size="default" className="rounded-full bg-primary hover:bg-primary/80 text-primary-foreground px-6 gap-2 text-sm">
+              <Link to="/contact">Start a Project <ArrowRight size={14} /></Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="rounded-full border-border/50 hover:bg-muted px-8">
+            <Button asChild size="default" variant="outline" className="rounded-full border-border/50 hover:bg-muted px-6 text-sm">
               <Link to="/services">Explore Services</Link>
             </Button>
           </div>
