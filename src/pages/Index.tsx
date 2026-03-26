@@ -27,7 +27,7 @@ const Index = () => (
     {/* Hero Text */}
     <section className="relative -mt-20 md:-mt-28 z-10 pb-12 md:pb-16">
       <div className="container">
-        <AnimatedSection className="max-w-2xl mx-auto text-center bg-background/80 backdrop-blur-md rounded-2xl p-8 md:p-12 shadow-xl">
+        <AnimatedSection className="max-w-2xl mx-auto text-center bg-background/60 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-lg">
           <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold leading-[1.2] mb-4 text-foreground">
             Two Markets.{" "}
             <span className="gradient-text">One Language.</span>
