@@ -35,14 +35,14 @@ const Index = () => (
           <p className="text-sm md:text-base text-white/90 max-w-xl mx-auto mb-3 leading-relaxed drop-shadow-md">
             We work with British brands entering China, and Chinese brands establishing themselves in the UK.
           </p>
-          <p className="text-xs md:text-sm text-accent font-medium mb-8">
+          <p className="text-xs md:text-sm text-white/80 font-medium mb-8 drop-shadow-md">
             Cross-border marketing without the translation loss.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            <Button asChild size="default" className="rounded-full bg-primary hover:bg-primary/80 text-primary-foreground px-6 gap-2 text-sm">
+            <Button asChild size="default" className="rounded-full bg-white/90 hover:bg-white text-foreground px-6 gap-2 text-sm shadow-lg">
               <Link to="/contact">Start a Project <ArrowRight size={14} /></Link>
             </Button>
-            <Button asChild size="default" variant="outline" className="rounded-full border-border/50 hover:bg-muted px-6 text-sm">
+            <Button asChild size="default" variant="outline" className="rounded-full border-white/60 text-white hover:bg-white/20 px-6 text-sm">
               <Link to="/services">Explore Services</Link>
             </Button>
           </div>
