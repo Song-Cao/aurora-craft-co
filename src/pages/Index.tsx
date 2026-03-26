@@ -25,7 +25,7 @@ const Index = () => (
     </section>
 
     {/* Hero Text */}
-    <section className="py-12 md:py-16">
+    <section className="relative -mt-40 md:-mt-52 z-10 pb-12 md:pb-16">
       <div className="container">
         <AnimatedSection className="max-w-2xl mx-auto text-center">
           <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold leading-[1.2] mb-4">
