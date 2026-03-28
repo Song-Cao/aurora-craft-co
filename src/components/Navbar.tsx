@@ -17,9 +17,9 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent">
       <div className="container flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="font-heading text-lg md:text-xl font-bold tracking-tight text-foreground">
+        <Link to="/" className="font-heading text-lg md:text-xl font-bold tracking-tight text-white">
           Two Virtual Media
         </Link>
 
@@ -30,42 +30,42 @@ const Navbar = () => {
               key={l.to}
               to={l.to}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-primary",
-                location.pathname === l.to ? "text-primary" : "text-muted-foreground"
+                "text-xs font-medium tracking-[0.2em] uppercase transition-colors hover:text-cyan-400",
+                location.pathname === l.to ? "text-white" : "text-white/70"
               )}
             >
               {l.label}
             </Link>
           ))}
-          <Button asChild size="sm" className="bg-primary hover:bg-primary/80 text-primary-foreground rounded-full px-6">
-            <Link to="/contact">Get in Touch</Link>
+          <Button asChild size="sm" className="rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 text-xs tracking-[0.15em] uppercase">
+            <Link to="/contact">Contact</Link>
           </Button>
         </div>
 
         {/* Mobile toggle */}
-        <button className="md:hidden text-foreground" onClick={() => setOpen(!open)}>
+        <button className="md:hidden text-white" onClick={() => setOpen(!open)}>
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden glass border-t border-border/50 pb-6 px-6 space-y-4">
+        <div className="md:hidden bg-black/95 backdrop-blur-xl border-t border-white/10 pb-6 px-6 space-y-4">
           {links.map((l) => (
             <Link
               key={l.to}
               to={l.to}
               onClick={() => setOpen(false)}
               className={cn(
-                "block text-sm font-medium py-2 transition-colors",
-                location.pathname === l.to ? "text-primary" : "text-muted-foreground"
+                "block text-sm font-medium py-2 tracking-[0.15em] uppercase transition-colors",
+                location.pathname === l.to ? "text-white" : "text-white/60"
               )}
             >
               {l.label}
             </Link>
           ))}
-          <Button asChild size="sm" className="w-full bg-primary hover:bg-primary/80 text-primary-foreground rounded-full">
-            <Link to="/contact" onClick={() => setOpen(false)}>Get in Touch</Link>
+          <Button asChild size="sm" className="w-full rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20">
+            <Link to="/contact" onClick={() => setOpen(false)}>Contact</Link>
           </Button>
         </div>
       )}
